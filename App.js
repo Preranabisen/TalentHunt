@@ -9,7 +9,14 @@ import Courses from './src/components/menuScreen/Courses'
 import SuccessStories from './src/components/menuScreen/SuccessStories';
 import WriteReview from './src/components/menuScreen/WriteReview'
 import Categories from './src/components/menuScreen/Categories';
-import HelpCenter from './src/components/menuScreen/HelpCenter'
+import HelpCenter from './src/components/menuScreen/HelpCenter';
+import SignUp from './src/components/auth/SignUp';
+import TutorSignup from './src/components/teacher/TutorSignup';
+import StudentsSignup from './src/components/students/StudentsSignup';
+import InstitutesSignup from './src/components/institutes/InstituesSignup';
+import EmployerSignup from './src/components/employer/EmployerSignup';
+import EmployeeSignup from './src/components/employee/EmployeeSignup';
+
 const navOptionHandler = () => ({
   headerShown: false,
 });
@@ -25,6 +32,36 @@ function HomeStack() {
         options={navOptionHandler}
       />
       
+      <Stack.Screen
+        name="SignUp"
+        component={SignUp}
+        options={navOptionHandler}
+      />
+      <Stack.Screen
+        name="TutorSignup"
+        component={TutorSignup}
+        options={navOptionHandler}
+      />
+      <Stack.Screen
+        name="StudentsSignup"
+        component={StudentsSignup}
+        options={navOptionHandler}
+      />
+      <Stack.Screen
+        name="InstitutesSignup"
+        component={InstitutesSignup}
+        options={navOptionHandler}
+      />
+      <Stack.Screen
+        name="EmployerSignup"
+        component={ EmployerSignup}
+        options={navOptionHandler}
+      />
+      <Stack.Screen
+        name="EmployeeSignup"
+        component={ EmployeeSignup}
+        options={navOptionHandler}
+      />
     </Stack.Navigator>
   );
 }
