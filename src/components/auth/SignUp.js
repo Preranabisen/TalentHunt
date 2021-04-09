@@ -29,7 +29,7 @@ class SignUp extends Component {
     }
     else if (this.state.value == 'Students') {
       console.log(this.state.value);
-      this.props.navigation.navigate('StudentSignup');
+      this.props.navigation.navigate('StudentsSignup');
     }
     else if (this.state.value == 'Employer') {
       console.log(this.state.value);

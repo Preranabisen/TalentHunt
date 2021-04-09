@@ -16,6 +16,8 @@ import StudentsSignup from './src/components/students/StudentsSignup';
 import InstitutesSignup from './src/components/institutes/InstituesSignup';
 import EmployerSignup from './src/components/employer/EmployerSignup';
 import EmployeeSignup from './src/components/employee/EmployeeSignup';
+import TutorForm from './src/components/teacher/TutorForm';
+import StudentsForm from './src/components/students/StudentsForm';
 
 const navOptionHandler = () => ({
   headerShown: false,
@@ -60,6 +62,16 @@ function HomeStack() {
       <Stack.Screen
         name="EmployeeSignup"
         component={ EmployeeSignup}
+        options={navOptionHandler}
+      />
+      <Stack.Screen
+        name="TutorForm"
+        component={TutorForm}
+        options={navOptionHandler}
+      />
+       <Stack.Screen
+        name="StudentsForm"
+        component={StudentsForm}
         options={navOptionHandler}
       />
     </Stack.Navigator>
