@@ -78,7 +78,7 @@ class SignUp extends Component {
                   <Picker.Item label="Students/ Parents" value="Students" />
                   <Picker.Item label="Employer" value="Employer" />
                   <Picker.Item label="Employee" value="Employee" />
-                  <Picker.Item label="Institute" value="Institute" />
+                  <Picker.Item label="Institutes" value="Institutes" />
                 </Picker>
               </View>
             </View>

@@ -98,6 +98,7 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     paddingLeft: 20,
     borderRadius: 4,
+    color: '#000'
   },
   RegistrationTitle: {
     fontSize: 25,

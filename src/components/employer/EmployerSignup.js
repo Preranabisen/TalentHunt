@@ -18,7 +18,7 @@ class EmployerSignup extends Component {
   }
   handleSubmit = () => {
     if (this.state.username == 'admin@gmail.com' && this.state.password == '1234') {
-        this.props.navigation.navigate('TutorForm');
+        this.props.navigation.navigate('EmployerForm');
     } else {
         alert('Incorrect Credntials!');
     }
@@ -98,6 +98,7 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     paddingLeft: 20,
     borderRadius: 4,
+    color: '#000',
   },
   RegistrationTitle: {
     fontSize: 25,

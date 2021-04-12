@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import {Text, View, TouchableOpacity, StyleSheet, Image} from 'react-native';
-import { Picker,} from "native-base";
 
 import Ionicon from 'react-native-vector-icons/Ionicons';
 import EntypoIcon from 'react-native-vector-icons/Entypo';

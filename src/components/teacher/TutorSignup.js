@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
 import {View, Text, ScrollView, StyleSheet, TextInput} from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
-import CheckBox from '@react-native-community/checkbox';
-import Icon from 'react-native-vector-icons/FontAwesome';
-
+import FontAwesomeIcon from 'react-native-vector-icons/FontAwesome';
+import {CheckBox} from 'react-native-elements';
 import MainHeader from '../MainHeader';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 class TutorSignup extends Component {
   constructor(props) {
@@ -13,16 +13,19 @@ class TutorSignup extends Component {
       username: '',
       password: '',
       authflag: 1,
-      toggleCheckBox: false,
+      selectedLang: false,
     };
   }
   handleSubmit = () => {
-    if (this.state.username == 'admin@gmail.com' && this.state.password == '1234') {
-        this.props.navigation.navigate('TutorForm');
+    if (
+      this.state.username == 'admin@gmail.com' &&
+      this.state.password == '1234'
+    ) {
+      this.props.navigation.navigate('TutorStep1');
     } else {
-        alert('Incorrect Credntials!');
+      alert('Incorrect Credntials!');
     }
-}
+  };
   render() {
     return (
       <View>
@@ -32,7 +35,11 @@ class TutorSignup extends Component {
             <Text style={styles.RegistrationTitle}>Tutor Registraion</Text>
             <View style={styles.RegistrationView}>
               <TouchableOpacity style={styles.FacebookBtn}>
-                  <Icon name="facebook" size={32} color="#fff" style={{marginRight: 10}}></Icon>
+                <FontAwesomeIcon
+                  name="facebook"
+                  size={32}
+                  color="#fff"
+                  style={{marginRight: 10}}></FontAwesomeIcon>
                 <Text style={styles.FacebookText}>Sign in with Facebook</Text>
               </TouchableOpacity>
               <View>
@@ -57,21 +64,42 @@ class TutorSignup extends Component {
                   }}
                 />
               </View>
-              <TouchableOpacity style={styles.SubmitBtn} onPress={this.handleSubmit}>
+              <TouchableOpacity
+                style={styles.SubmitBtn}
+                onPress={this.handleSubmit}>
                 <Text style={styles.SubmitText}>SUBMIT</Text>
               </TouchableOpacity>
               <View style={styles.CheckView}>
                 <CheckBox
-                  disabled={false}
-                  value={this.state.toggleCheckBox}
-                  onValueChange={newValue => {
-                      this.setState({toggleCheckBox: newValue})
-                  }}
+                  center
+                  checked={this.state.selectedLang}
+                  checkedIcon={
+                    <View style={styles.checkSelectIcon}>
+                      <Icon
+                        name="checkmark-sharp"
+                        size={15}
+                        color="#fff"></Icon>
+                    </View>
+                  }
+                  uncheckedIcon={
+                    <View style={styles.UncheckSelectIcon}>
+                      <Icon
+                        name="checkmark-sharp"
+                        size={15}
+                        color="#fff"></Icon>
+                    </View>
+                  }
+                  onPress={() =>
+                    this.setState({selectedLang: !this.state.selectedLang})
+                  }
                 />
-                <Text style={styles.CheckText}>I have read and agree to the Terms and Conditions and Privacy Policy</Text>
+                <Text style={styles.CheckText}>
+                  I have read and agree to the Terms and Conditions and Privacy
+                  Policy
+                </Text>
               </View>
               <View>
-                  <Text style={styles.ForgetText}>Forgot Password?</Text>
+                <Text style={styles.ForgetText}>Forgot Password?</Text>
               </View>
             </View>
           </View>
@@ -93,11 +121,12 @@ const styles = StyleSheet.create({
   input: {
     borderColor: '#0000001a',
     borderWidth: 1,
-    height: 46,
+    height: 50,
     fontSize: 22,
     marginBottom: 20,
     paddingLeft: 20,
     borderRadius: 4,
+    color: '#000',
   },
   RegistrationTitle: {
     fontSize: 25,
@@ -120,7 +149,7 @@ const styles = StyleSheet.create({
     marginBottom: 40,
     flexDirection: 'row',
     justifyContent: 'center',
-    marginTop: 20
+    marginTop: 20,
   },
   FacebookText: {
     fontWeight: '100',
@@ -141,16 +170,39 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   CheckView: {
-      flexDirection: 'row',
-      marginBottom: 20
+    flexDirection: 'row',
+    marginBottom: 20,
+    
   },
   CheckText: {
     color: '#575454de',
-    fontSize: 16
+    fontSize: 16,
+    paddingRight: 20,
+    marginLeft: -10
   },
   ForgetText: {
     color: '#3f51b5',
     fontSize: 16,
-    fontWeight: '700'
-  }
+    fontWeight: '700',
+  },
+  UncheckSelectIcon: {
+    width: 20,
+    height: 20,
+    borderRadius: 4,
+    backgroundColor: '#fff',
+    borderColor: '#575454de',
+    borderWidth: 1,
+    padding: 2,
+    marginLeft: -20,
+    marginTop: -10
+  },
+  checkSelectIcon: {
+    width: 20,
+    height: 20,
+    borderRadius: 4,
+    backgroundColor: '#4169e1',
+    padding: 2,
+    marginLeft: -20,
+    marginTop: -10
+  },
 });

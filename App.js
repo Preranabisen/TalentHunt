@@ -13,11 +13,20 @@ import HelpCenter from './src/components/menuScreen/HelpCenter';
 import SignUp from './src/components/auth/SignUp';
 import TutorSignup from './src/components/teacher/TutorSignup';
 import StudentsSignup from './src/components/students/StudentsSignup';
-import InstitutesSignup from './src/components/institutes/InstituesSignup';
+import InstitutesSignup from './src/components/institutes/InstitutesSignup';
 import EmployerSignup from './src/components/employer/EmployerSignup';
 import EmployeeSignup from './src/components/employee/EmployeeSignup';
-import TutorForm from './src/components/teacher/TutorForm';
+import TutorStep1 from './src/components/teacher/TutorStep1';
 import StudentsForm from './src/components/students/StudentsForm';
+import EmployerForm from './src/components/employer/EmployerForm';
+import EmployeeForm from './src/components/employee/EmployeeForm';
+import InstitutesForm from './src/components/institutes/InstitutesForm';
+import TutorStep2 from './src/components/teacher/TutorStep2';
+import TutorStep3 from './src/components/teacher/TutorStep3';
+import TutorStep4 from './src/components/teacher/TutorStep4';
+import TutorStep5 from './src/components/teacher/TutorStep5';
+import TutorStep6 from './src/components/teacher/TutorStep6';
+
 
 const navOptionHandler = () => ({
   headerShown: false,
@@ -65,13 +74,53 @@ function HomeStack() {
         options={navOptionHandler}
       />
       <Stack.Screen
-        name="TutorForm"
-        component={TutorForm}
+        name="TutorStep1"
+        component={TutorStep1}
         options={navOptionHandler}
       />
        <Stack.Screen
         name="StudentsForm"
         component={StudentsForm}
+        options={navOptionHandler}
+      />
+      <Stack.Screen
+        name="EmployeeForm"
+        component={EmployeeForm}
+        options={navOptionHandler}
+      />
+      <Stack.Screen
+        name="EmployerForm"
+        component={EmployerForm}
+        options={navOptionHandler}
+      />
+      <Stack.Screen
+        name="InstitutesForm"
+        component={InstitutesForm}
+        options={navOptionHandler}
+      />
+       <Stack.Screen
+        name="TutorStep2"
+        component={TutorStep2}
+        options={navOptionHandler}
+      />
+       <Stack.Screen
+        name="TutorStep3"
+        component={TutorStep3}
+        options={navOptionHandler}
+      />
+      <Stack.Screen
+        name="TutorStep4"
+        component={TutorStep4}
+        options={navOptionHandler}
+      />
+      <Stack.Screen
+        name="TutorStep5"
+        component={TutorStep5}
+        options={navOptionHandler}
+      />
+       <Stack.Screen
+        name="TutorStep6"
+        component={TutorStep6}
         options={navOptionHandler}
       />
     </Stack.Navigator>
